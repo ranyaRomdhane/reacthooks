@@ -1,6 +1,6 @@
 import React from 'react'
-import AddM from './AddM';
-import CardM from './CardM';
+import CardM from '../comp/CardM';
+import AddM from '../comp/AddM'
 
 
 function Movielist({ movies, setmovies, text, rate }) {

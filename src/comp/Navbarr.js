@@ -5,6 +5,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import React from 'react';
 import ReactStars from 'react-rating-stars-component';
+import { Link } from 'react-router-dom';
 
 function Navbarr({settext, setrate}) {
   return (
@@ -15,13 +16,16 @@ function Navbarr({settext, setrate}) {
         <Navbar.Collapse id="navbarScroll">
 
           <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: '100px' }}>
-            <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">Contact</Nav.Link>
-            <Nav.Link href="#action3">Series</Nav.Link>
-            <Nav.Link href="#action4">Movies</Nav.Link>
+            <Link to="/">
+            </Link> 
+            <Nav.Link ><Link to="/Home">Home</Link></Nav.Link>
+            <Nav.Link ><Link to="/About">About</Link></Nav.Link>
+            <Nav.Link ><Link to="/Trailer">Trailer</Link></Nav.Link>
+            <Nav.Link ><Link to="/Movie">Movie</Link></Nav.Link>
+           
           </Nav>
           <div>
-        <ReactStars   onChange={(newrating) => setrate(newrating)}
+        <ReactStars onChange={(newrating) =>setrate(newrating)}
         count={5} 
     size={24}
      activeColor="#ffd700"
@@ -34,7 +38,7 @@ function Navbarr({settext, setrate}) {
               placeholder="Search"
               className="me-2"
               aria-label="Search"
-              onChange={(e) => settext(e.target.value)}
+              onChange={(e) =>settext(e.target.value)}
             />
             <Button variant="outline-success">Search</Button>
           </Form>
